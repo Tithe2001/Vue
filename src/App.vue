@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import Counter from './components/Counter.vue';
 
 let name="Afrin Akther Tithe";
 let greeting="Welcome to the class Saima";
@@ -18,6 +19,9 @@ const changecourse=()=>{
 
 </script>
 
+
+
+
 <template>
  <h1>{{ greeting }}</h1>
  <h2>From: {{ name }}</h2>
@@ -32,7 +36,14 @@ const changecourse=()=>{
 <h5 v-if="active">yes</h5>
  <h5 v-else>not now</h5>
 
+ <Counter/>
+
 </template>
+
+
+
+
+
 
 <style scoped>
 

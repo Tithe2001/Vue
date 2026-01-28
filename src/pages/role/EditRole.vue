@@ -1,5 +1,7 @@
 <template>
-  <RouterView/>
+  <div>
+    Edit Role
+  </div>
 </template>
 
 <script lang="ts" setup>

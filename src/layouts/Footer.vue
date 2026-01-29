@@ -1,10 +1,10 @@
 <template>
-  <Main/>
+  <div>
+    Footer
+  </div>
 </template>
 
 <script lang="ts" setup>
-import Main from './layouts/Main.vue';
-
 
 </script>
 

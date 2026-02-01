@@ -5,13 +5,16 @@
         <router-link to="/">Dashboard</router-link>
         <router-link to="/role">Roles</router-link>
         <router-link to="/role/create">Create Role</router-link>
+        
+        <router-link to="/customer">Customers</router-link>
 
     </nav>
     
   </div>
+  
 </template>
 
-<script lang="ts" setup>
+<script  setup>
 
 </script>
 

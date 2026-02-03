@@ -38,10 +38,13 @@
 import axios from "axios";
 import { onMounted, ref } from "vue";
 
+const baseUrl=import.meta.env.VITE_BASE_URL;
+
 const customers = ref([]);
 const fetchCustomers = () => {
   axios
-    .get("http://localhost/Laravel/template/public/api/customers")
+    // .get("http://localhost/Laravel/template/public/api/customers")
+    .get(`${baseUrl}/customers`)
     .then((res) => {
       console.log(res.data.customers);
       customers.value = res.data.customers;

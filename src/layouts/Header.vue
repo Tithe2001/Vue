@@ -7,6 +7,7 @@
         <router-link to="/role/create">Create Role</router-link>
         
         <router-link to="/customer">Customers</router-link>
+        <router-link to="/products">Products</router-link>
 
     </nav>
     

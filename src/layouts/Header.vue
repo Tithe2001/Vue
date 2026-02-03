@@ -8,6 +8,7 @@
         
         <router-link to="/customer">Customers</router-link>
         <router-link to="/products">Products</router-link>
+        <router-link to="/city">City</router-link>
 
     </nav>
     

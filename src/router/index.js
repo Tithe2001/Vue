@@ -5,6 +5,7 @@ import CreateRole from "../pages/role/CreateRole.vue";
 import EditRole from "../pages/role/EditRole.vue";
 import CustomerList from "../pages/customer/CustomerList.vue";
 import Products from "../pages/product/Products.vue";
+import City from "../pages/city/City.vue";
 
 
 const routes=[
@@ -16,6 +17,7 @@ const routes=[
 
 
     {path:"/products",component:Products},
+    {path:"/city",component:City},
 
 ]
 

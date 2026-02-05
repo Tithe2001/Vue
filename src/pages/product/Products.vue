@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <div class="content-wrapper">
+        <div class="container-fluid px-4 pt-4">
     <div class="row">
        <div class="col-md-3 col-sm-6 md-4" v-for="product in products" :key="product.id">
 
@@ -10,6 +11,7 @@
 
        </div>
     </div>
+  </div>
   </div>
 </template>
 

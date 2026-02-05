@@ -1,5 +1,6 @@
 <template>
-  <div>
+   <div class="content-wrapper">
+        <div class="container-fluid px-4 pt-4">
     <div class="row">
       <div class="col-md-6 mb-3">
         <label for="division" class="form-label">Division  {{  division_id}}</label>
@@ -18,6 +19,7 @@
           <option  v-for="district in districts" :key="district.id" :value="district.id">{{ district.name }}</option>
         </select>
       </div>
+    </div>
     </div>
 
   </div>

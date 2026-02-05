@@ -1,8 +1,12 @@
 <template>
+  <div class="wrapper">
     <Header/>
     <Sidebar/>
   <RouterView/>
   <Footer/>
+  </div>
+  
+  
 </template>
 
 <script lang="ts" setup>

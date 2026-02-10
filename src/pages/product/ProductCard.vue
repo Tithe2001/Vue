@@ -6,6 +6,7 @@
     <h5 class="card-title">{{ props.product.title }}</h5>
     <p class="card-text">{{ props.product.description }}</p>
     <p class="card-text">{{ props.product.price }}</p>
+    <a href="#" class="btn btn-primary">Add To Cart</a>
   </div>
 </div>
 </template>

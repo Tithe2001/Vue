@@ -21,11 +21,15 @@ import ProductCard from './ProductCard.vue';
 import axios from 'axios';
 
 
+const baseUrl = import.meta.env.VITE_BASE_URL;
+
+
 let products=ref([]);
 
 function fetchProducts(){
     axios
     .get(`https://dummyjson.com/products`)
+    // .get(`${baseUrl}/products`)
     .then((res) => {
         console.log(res);
         products.value=res.data.products;

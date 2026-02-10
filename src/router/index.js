@@ -6,18 +6,55 @@ import EditRole from "../pages/role/EditRole.vue";
 import CustomerList from "../pages/customer/CustomerList.vue";
 import Products from "../pages/product/Products.vue";
 import City from "../pages/city/City.vue";
+import CreateCustomer from "../pages/customer/CreateCustomer.vue";
+import EditCustomer from "../pages/customer/EditCustomer.vue";
+import LoginTemplate from "../layouts/LoginTemplate.vue";
+import Login from "../pages/login/login.vue";
+import Register from "../pages/login/Register.vue";
+import Main from "../layouts/Main.vue";
 
 
 const routes=[
-    {path:"/", component:Dashboard},
-    {path:"/role", Component:RoleList},
-    {path:"/role/create", component:CreateRole},
-    {path:"/role/edit/:id", component:EditRole},
-    {path:"/customer", component:CustomerList},
+
+
+    {path:"/login", component:LoginTemplate, 
+        children:[
+      { path: "/login", component: Login },
+      { path: "/register", component: Register },
+
+        ],
+
+    },
+
+        {path:"/",
+            component: Main,
+            children:[
+                { path: "/", component: Dashboard, meta: { requiresAuth: true } },
+
+                // // {path:"/role", Component:RoleList},
+    // // {path:"/role/create", component:CreateRole},
+    // // {path:"/role/edit/:id", component:EditRole},
+    
+    {path:"/customers", component:CustomerList},
+    {path:"/customers/create", component:CreateCustomer},
+    {path: "/customers/edit/:id", component: EditCustomer},
+
 
 
     {path:"/products",component:Products},
     {path:"/city",component:City},
+
+    //  { path: "/emit", component: Parent },
+
+            ],
+        },
+        
+    
+
+
+
+    // {path:"/", component:Dashboard},
+    
 
 ]
 

@@ -12,6 +12,7 @@
                 <form
                   action="https://coup-admin-dashboard-template.multipurposethemes.com/bs5/main/index.html"
                   method="post"
+                  @submit.prevent="submit"
                   
                 >
                   <div class="form-group">
@@ -23,6 +24,7 @@
                         type="email"
                         class="form-control ps-15 bg-transparent"
                         placeholder="email"
+                        v-model="form.email"
                       />
                     </div>
                   </div>
@@ -33,8 +35,10 @@
                       ></span>
                       <input
                         type="password"
+                        ref="password"
                         class="form-control ps-15 bg-transparent"
                         placeholder="Password"
+                        v-model="form.password"
                       />
                     </div>
                   </div>
@@ -93,16 +97,12 @@
   </div>
 </template>
 
-<!-- <script setup>
+<script setup>
 import { reactive, ref, useTemplateRef } from "vue";
 import { useRouter } from "vue-router";
 import Auth from "../../services/auth";
 
-const password = useTemplateRef("password");
 
-function handleSee() {
-  password.value.setAttribute("type", "text");
-}
 
 const router = useRouter();
 
@@ -121,6 +121,6 @@ const submit = async () => {
     error.value = "Login Failed";
   }
 };
-</script> -->
+</script>
 
 <style></style>

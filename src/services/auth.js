@@ -1,19 +1,19 @@
-// import api from "./axios";
+import api from "./axios";
 
-// export default {
+export default {
 
-//   async login(data){
-//     const res = await api.post("/auth/login", data);
-//     localStorage.setItem("token", res.data.token);
-//     return res.data;
-//   },
+  async login(data){
+    const res = await api.post("/login", data);
+    localStorage.setItem("token", res.data.token);
+    return res.data;
+  },
 
-//   async logout(){
-//     await api.post("/auth/logout");
-//     localStorage.removeItem("token");
-//   },
+  async logout(){
+    await api.post("/logout");
+    localStorage.removeItem("token");
+  },
 
-//   isAuthenticated(){
-//     return !!localStorage.getItem("token");
-//   }
-// };
+  isAuthenticated(){
+    return !!localStorage.getItem("token");
+  }
+};

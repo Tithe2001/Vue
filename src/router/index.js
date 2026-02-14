@@ -13,52 +13,50 @@ import Login from "../pages/login/login.vue";
 import Register from "../pages/login/Register.vue";
 import Main from "../layouts/Main.vue";
 
-
-const routes=[
-
-
-    {path:"/login", component:LoginTemplate, 
-        children:[
+const routes = [
+  {
+    path: "/login",
+    component: LoginTemplate,
+    children: [
       { path: "/login", component: Login },
       { path: "/register", component: Register },
+    ],
+  },
 
-        ],
+  {
+    path: "/",
+    component: Main,
+    children: [
+      { path: "/", component: Dashboard, meta: { requiresAuth: true } },
 
-    },
+      { path: "/role", component: RoleList },
 
-        {path:"/",
-            component: Main,
-            children:[
-                { path: "/", component: Dashboard, meta: { requiresAuth: true } },
+      { path: "/customers", component: CustomerList },
+      { path: "/customers/create", component: CreateCustomer },
+      { path: "/customers/edit/:id", component: EditCustomer },
 
-                // // {path:"/role", Component:RoleList},
-    // // {path:"/role/create", component:CreateRole},
-    // // {path:"/role/edit/:id", component:EditRole},
-    
-    {path:"/customers", component:CustomerList},
-    {path:"/customers/create", component:CreateCustomer},
-    {path: "/customers/edit/:id", component: EditCustomer},
+      { path: "/products", component: Products },
+      { path: "/city", component: City },
+    ],
+  },
 
-
-
-    {path:"/products",component:Products},
-    {path:"/city",component:City},
-
-    //  { path: "/emit", component: Parent },
-
-            ],
-        },
-        
-    
-
-
-
-    // {path:"/", component:Dashboard},
-    
-
-]
+  // {path:"/", component:Dashboard},
+];
 
 export const router = createRouter({
-    history:createWebHistory(),
-    routes
+  history: createWebHistory(),
+  routes,
+});
+
+
+
+
+router.beforeEach((to, from, next) => {
+  const isLoggedIn = localStorage.getItem("token");
+
+  if (to.meta.requiresAuth && !isLoggedIn) {
+    next("/login");
+  } else {
+    next();
+  }
 });

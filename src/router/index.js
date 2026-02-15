@@ -29,14 +29,14 @@ const routes = [
     children: [
       { path: "/", component: Dashboard, meta: { requiresAuth: true } },
 
-      { path: "/role", component: RoleList },
+      { path: "/role", component: RoleList, meta: { requiresAuth: true } },
 
-      { path: "/customers", component: CustomerList },
-      { path: "/customers/create", component: CreateCustomer },
-      { path: "/customers/edit/:id", component: EditCustomer },
+      { path: "/customers", component: CustomerList, meta: { requiresAuth: true } },
+      { path: "/customers/create", component: CreateCustomer, meta: { requiresAuth: true } },
+      { path: "/customers/edit/:id", component: EditCustomer , meta: { requiresAuth: true }},
 
-      { path: "/products", component: Products },
-      { path: "/city", component: City },
+      { path: "/products", component: Products, meta: { requiresAuth: true } },
+      { path: "/city", component: City, meta: { requiresAuth: true } },
     ],
   },
 

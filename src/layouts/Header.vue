@@ -170,7 +170,7 @@
 				 <a class="dropdown-item" href="#"><i class="ti-wallet text-faded me-2"></i> My Wallet</a>
 				 <a class="dropdown-item" href="#"><i class="ti-settings text-faded me-2"></i> Settings</a>
 				 <div class="dropdown-divider"></div>
-				 <a class="dropdown-item" href="#"><i class="ti-lock text-faded me-2"></i> Logout</a>
+				 <a class="dropdown-item" href="#" @click="logout"><i class="ti-lock text-faded me-2"></i> Logout</a>
               </li>
             </ul>
           </li>			  
@@ -196,7 +196,15 @@
 
 const imgURL=import.meta.env.VITE_IMG_URL;
 
+import { useRouter } from "vue-router";
+import auth from "../services/auth";
 
+const router = useRouter();
+
+const logout = async ()=>{
+  await auth.logout();
+  router.push("/login");
+};
 </script>
 
 <style>

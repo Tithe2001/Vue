@@ -2,7 +2,7 @@
   <div class="content-wrapper">
         <div class="container-fluid px-4 pt-4">
     <div class="row">
-       <div class="col-md-3 col-sm-6 md-4" v-for="product in products" :key="product.id">
+       <div class="col-md-3 col-sm-6 mb-4" v-for="product in products" :key="product.id">
 
 
         <ProductCard :product="product"/>
@@ -28,10 +28,11 @@ let products=ref([]);
 
 function fetchProducts(){
     axios
-    .get(`https://dummyjson.com/products`)
-    // .get(`${baseUrl}/products`)
+    // .get(`https://dummyjson.com/products`)
+    .get(`${baseUrl}/products`)
     .then((res) => {
         console.log(res);
+        // products.value=res.data.products;
         products.value=res.data.products;
 
         

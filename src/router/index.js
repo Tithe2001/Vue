@@ -12,6 +12,8 @@ import LoginTemplate from "../layouts/LoginTemplate.vue";
 import Login from "../pages/login/login.vue";
 import Register from "../pages/login/Register.vue";
 import Main from "../layouts/Main.vue";
+import MyCart from "../pages/order/MyCart.vue";
+import OrderDetails from "../pages/order/OrderDetails.vue";
 
 const routes = [
   {
@@ -37,6 +39,8 @@ const routes = [
 
       { path: "/products", component: Products, meta: { requiresAuth: true } },
       { path: "/city", component: City, meta: { requiresAuth: true } },
+      { path: "/order", component: MyCart, meta: { requiresAuth: true } },
+      { path: "/order/OrderDetails", component: OrderDetails, meta: { requiresAuth: true } },
     ],
   },
 

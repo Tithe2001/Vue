@@ -1,4 +1,5 @@
 <template>
+
  <aside class="main-sidebar">
     <!-- sidebar-->
     <section class="sidebar position-relative">	
@@ -18,7 +19,7 @@
 				</li>
 				<li title="Dashboard"><a href="/products"><i data-feather="package"></i><span>Products</span></a></li>
 				<li title="Dashboard"><a href="index-sales.html"><i data-feather="bar-chart-2"></i><span>Sales</span></a></li>
-				<li title="Dashboard"><a href="index-order.html"><i data-feather="shopping-cart"></i><span>Orders</span></a></li>
+				<li title="Dashboard"><a href="/order"><i data-feather="shopping-cart"></i><span>My Cart</span></a></li>
 				<li title="Dashboard"><a href="index-payment.html"><i data-feather="credit-card"></i><span>Payments</span></a></li>
 				<li class="header">Apps & Pages </li>
 				<li title="Support"><a href="extra_app_ticket.html"><i data-feather="message-circle"></i><span>Support</span></a></li>
@@ -57,6 +58,7 @@
 		</div>
     </section>
   </aside>
+
 </template>
 
 <script lang="ts" setup>
